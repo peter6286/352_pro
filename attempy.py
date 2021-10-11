@@ -1,9 +1,26 @@
+#str='Runoob'
+#temp=(str[::-1])
+#temp.join(reversed(str))
+#print(temp)
+#print(''.join(reversed(str)))
 
-def ave (num):
-    total = 0
-    for i in range (len(num)):
-        total = total + a[i]
-    return total/len(a)
 
-a=[2,32,43,3,32]
-print(ave(a))
+import sys
+result=[]
+#with open('in-proj0.txt','r') as f:
+#    for line in f:
+#        result.append(list(line.strip('\n').split(',')))
+#print(result)
+
+
+for line in open("in-proj0.txt"):
+    result.append(line.strip('\n'))
+print(result)
+
+
+i=0
+for ll in result:
+    print("[%d],%s" % (i,ll))
+    inp = ll
+    i=i+1
+print(i)

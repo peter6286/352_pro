@@ -23,12 +23,10 @@ print("[S]: Got a connection request from a client at {}".format(addr))
 
 while True:     # 一个死循环，直到客户端发送‘exit’的信号，才关闭连接
     client_data = csockid.recv(1024).decode()      # 接收信息
-    if client_data == "":       # 判断是否退出连接
+    if client_data == "exit":       # 判断是否退出连接
         exit("通信结束")
     print(client_data)
     str = client_data
-    print(type(str))
-    #print(temp)
     temp=(str[::-1])
     result=temp+str
     print(result)
