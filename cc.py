@@ -31,13 +31,13 @@ for ll in result:
     if not inp:     # 防止输入空信息，导致异常退出
         continue
     cs.send(inp.encode())
-
+    time.sleep(2)
     #if inp == "exit":   # 如果输入的是‘exit’，表示断开连接
     #    print("结束通信！")
     #    break
 
     server_reply = cs.recv(1024).decode()
-    print("来自server向你发来信息：[%d]clea%s" % (i,server_reply ))
+    print("来自server向你发来信息：[%d]%s" % (i,server_reply ))
     f = open("out-proj0.txt",'a') #读取label.txt文件，没有则创建，‘a’表示再次写入时不覆盖之前的内容
     f .write(server_reply)
     f.write('\n')

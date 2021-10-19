@@ -16,6 +16,16 @@ Then attempt the changes suggested below. It will help subsequent projects if yo
 (2) Try running the program immediately again when it finishes
     successfully. What do you see? Why? What happens when you remove the various
     sleep()s in the program?
+    It successfully establishes connection between server and client.The programme would initiate the server thread first.
+    Then the program use time.sleep function to delay the execution of the thread ,function random.random() * 5 implies
+    the wait time is within 5 seconds.The programme started the client thread , once the connection established between
+    client and server the server would send corresponding message to the client.Finally, the program would delay for 5 seconds
+    before printing the final line of the program.
+
+    If we remove time.sleep(random.random()*5) from our program the two threads would be started at the same time.
+    This might cause some problem if the server is not established before the client programme thread started.
+    If we remove the code time.sleep(5) the finally line of the program would be execute before client and server thread finished.
+
 
 (3) Separate the server code and client code into two different programs,
     server.py and client.py. Execute the server program first and then execute
